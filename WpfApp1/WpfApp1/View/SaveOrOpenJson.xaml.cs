@@ -10,21 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для SaveOrOpenJson.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SaveOrOpenJson : Window
     {
-        public MainWindow()
+        public SaveOrOpenJson()
         {
             InitializeComponent();
-            DataContext = new ApplicationViewModel();
-           
         }
     }
 }

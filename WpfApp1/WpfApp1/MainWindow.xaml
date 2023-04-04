@@ -7,52 +7,41 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
-        
+       
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="0.8*" />
         </Grid.ColumnDefinitions>
-
-        <ComboBox Name="Department" Grid.Column="0" 
-                  ItemsSource="{Binding Departments}" 
-                  SelectedItem="{Binding SelectedDepartment }"  
-                  DisplayMemberPath="Name"
-                  SelectedValuePath="ID">
-            
-        </ComboBox>
-
-        <ComboBox Name="Personal" Grid.Column="1" 
-                  ItemsSource="{Binding Personals}"
-                  SelectedItem="{Binding SelectPersonal}"
-                  DisplayMemberPath="Namepeople" 
-                  SelectedValuePath="ID">
-
-                <ComboBox.Style>
-                    <Style TargetType="ComboBox">
-                        <Style.Triggers>
-                            
-                        <DataTrigger Binding="{Binding Path=SelectedValue, ElementName=Department}" Value="4">
-                            <Setter Property="IsEnabled" Value="False" />
-                        </DataTrigger>
-                            
-                        <DataTrigger Binding="{Binding Path=SelectedIndex, ElementName=Department}" Value="0">
-                            <Setter Property="SelectedIndex" Value="0" />
-                        </DataTrigger>
-
-                        <DataTrigger Binding="{Binding Path=SelectedIndex, ElementName=Department}" Value="1">
-                            <Setter Property="SelectedIndex" Value="1" />
-                        </DataTrigger>
-
-                        <DataTrigger Binding="{Binding Path=SelectedIndex, ElementName=Department}" Value="2">
-                            <Setter Property="SelectedIndex" Value="2" />
-                        </DataTrigger>
-
-                    </Style.Triggers>
-                    </Style>
-                </ComboBox.Style>
-
-        </ComboBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+        <ListBox Grid.Column="0" ItemsSource="{Binding Personals}"
+                 SelectedItem="{Binding SelectedPersonal}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{Binding Path=Namepeople}" />
+                        <TextBlock Text="{Binding Path=SecondName}" />
+                        <TextBlock Text="{Binding Path=Position}" />
+                        <TextBlock Text="{Binding Path=Salary}" />
+                        <TextBlock Text="{Binding Path=Depart}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Command="{Binding AddCommand}" Width="97">регистрация</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" DataContext="{Binding SelectedPersonal}">
+            <TextBlock Text="Редактирование"  />
+            <TextBlock Text="Зарплата" />
+            <TextBox Text="{Binding Salary, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Должность" />
+            <TextBox Text="{Binding Position, UpdateSourceTrigger=PropertyChanged}" />
+           
+        </StackPanel>
     </Grid>
 </Window>

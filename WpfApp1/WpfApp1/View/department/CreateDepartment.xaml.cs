@@ -10,21 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace WpfApp1.View.department
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для CreateDepartment.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateDepartment : Window
     {
-        public MainWindow()
+        public CreateDepartment()
         {
             InitializeComponent();
-            DataContext = new ApplicationViewModel();
-           
         }
     }
 }

@@ -12,9 +12,13 @@ namespace WpfApp1
    public class Department : INotifyPropertyChanged
     {
         private string name;
+        private int[] cabinetList;
+        private IEnumerable<Personal> personalList;
 
        public int ID { get; set; }
-
+        /// <summary>
+        /// Название
+        /// </summary>
         public string Name
         {
             get { return name; }
@@ -24,6 +28,31 @@ namespace WpfApp1
                 OnPropertyChanged("Name");
             }
         }
+        /// <summary>
+        /// Список кабинетов
+        /// </summary>
+        public int[] CabinetList
+        {
+            get { return cabinetList; }
+            set
+            {
+                cabinetList = value;
+                OnPropertyChanged("CabinetList");
+            }
+        }
+        /// <summary>
+        /// Список сотрудников
+        /// </summary>
+        public IEnumerable<Personal> PersonalList
+        {
+            get { return personalList.Where(w=>w.Depart == Name); }
+            set
+            {
+                personalList = value;
+                OnPropertyChanged("PersonalList");
+            }
+        }
+
 
         public static Department[] GetDepartments()
         {
@@ -46,5 +75,6 @@ namespace WpfApp1
         }
 
     }
+   
 }
 
