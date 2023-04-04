@@ -1,2 +1,2 @@
-# test3
-wpf project with MVVM pattern
+# wpf project with MVVM pattern
+
