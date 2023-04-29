@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\projects\wpf mvvm\WpfApp1\WpfApp1\obj\Debug\
+D:\Download\VS2019_0\project\WpfApp1\WpfApp1\obj\Debug\
 WpfApp1
 none
 false
 DEBUG;TRACE
-D:\projects\wpf mvvm\WpfApp1\WpfApp1\App.xaml
-8-1770993044
+D:\Download\VS2019_0\project\WpfApp1\WpfApp1\App.xaml
+11151548125
 
-18215822259
-13-1310406943
-MainWindow.xaml;View\department\CreateDepartment.xaml;View\department\EditDepartment.xaml;View\personal\EditPosition.xaml;View\personal\EditSalary.xaml;View\personal\ListPersonal.xaml;View\personal\Register.xaml;View\SaveOrOpenJson.xaml;
+9-4440889
+13-1505183044
+MainWindow.xaml;
 
 False
 
